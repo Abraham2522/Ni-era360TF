@@ -63,7 +63,8 @@ public class SecurityConfig {
                                         "/v3/api-docs/**",
                                         "/swagger-ui/**",
                                         "/swagger-ui.html",
-                                        "/pagos/**"
+                                        "/pagos/**",
+                                        "/"
                                //         "/api/usuarios/**"
                                 ).permitAll()
                         //.requestMatchers("/api/authenticate", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
