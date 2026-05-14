@@ -76,8 +76,14 @@ public class SecurityConfig {
                                         "/swagger-ui/**",
                                         "/swagger-ui.html",
                                         "/pagos/**",
-                                        "/"
-                               //         "/api/usuarios/**"
+                                        "/",
+                                        "/usuarios/**",
+                                        "/reservas/**",
+                                        "/resenas",
+                                        "/mensajes",
+                                        "/cuidadores",
+                                        "/clientes",
+                                        "/chats"
                                 ).permitAll()
                         //.requestMatchers("/api/authenticate", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                         //.requestMatchers("/api/proveedores").hasRole("ADMIN")
