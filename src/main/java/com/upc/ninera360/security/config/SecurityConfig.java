@@ -26,7 +26,19 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-
+@OpenAPIDefinition(
+        info = @Info(
+                title = "Ninera360 API",
+                version = "1.0",
+                description = "API documentation"
+        )
+)
+@SecurityScheme(
+        name = "bearerAuth",
+        type = SecuritySchemeType.HTTP,
+        scheme = "bearer",
+        bearerFormat = "JWT"
+)
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
