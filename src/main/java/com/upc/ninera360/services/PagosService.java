@@ -11,4 +11,8 @@ public interface PagosService  {
     public void eliminarPago(long id);
     public List<PagosDTO> listarPagos();
     public PagosDTO buscarPorId(long id);
+    // count
+    public long count();
+    // buscar por estado
+    public List<PagosDTO> findByEstadoPago(boolean estadoPago);
 }

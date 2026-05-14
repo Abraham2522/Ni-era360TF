@@ -70,4 +70,29 @@ public class MensajeServiceImpl implements MensajeService {
                 .map(mensaje -> modelMapper.map(mensaje, MensajeDTO.class))
                 .orElseThrow(() -> new RuntimeException("Mensaje no encontrado con ID: " + id));
     }
+    @Override
+    public long count() {
+        long count = mensajeRepository.count();
+        if (count == 0) {
+            throw new RuntimeException(
+                    "No existen mensajes registrados"
+            );
+        }
+        return count;
+    }
+
+    @Override
+    public List<MensajeDTO> findByContenido(String contenido) {
+        List<Mensaje> lista =
+                mensajeRepository.findByContenido(contenido);
+        if (lista.isEmpty()) {
+            throw new RuntimeException(
+                    "No existen mensajes con ese contenido"
+            );
+        }
+        return lista.stream()
+                .map(m ->
+                        modelMapper.map(m, MensajeDTO.class))
+                .toList();
+    }
 }

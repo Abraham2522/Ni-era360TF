@@ -1,5 +1,6 @@
 package com.upc.ninera360.controllers;
 
+import com.upc.ninera360.dtos.CuidadoresDTO;
 import com.upc.ninera360.dtos.MensajeDTO;
 import com.upc.ninera360.services.MensajeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,15 @@ public class MensajeController {
     public ResponseEntity<MensajeDTO> buscarPorId(@PathVariable long id) {
         MensajeDTO proveedorDTO = mensajeService.buscarPorId(id);
         return ResponseEntity.ok(proveedorDTO);
+    }
+
+    @GetMapping("/countMensajes")
+    public long count() {
+        return mensajeService.count();
+    }
+
+    @GetMapping("/contenido/{contenido}")
+    public List<MensajeDTO> findByContenido(@PathVariable String contenido) {
+        return mensajeService.findByContenido(contenido);
     }
 }

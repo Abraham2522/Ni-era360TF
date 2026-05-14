@@ -12,5 +12,8 @@ public interface UserProfileService {
     public void eliminar(long id);
     public List<UserProfileDTO> listar();
     public UserProfileDTO buscarPorId(long id);
+    public long count();
+    // Buscar usuarios por nombre
+    public List<UserProfileDTO> findByNombre(String nombre);
 }
 

@@ -39,5 +39,14 @@ public class PagosController {
         PagosDTO pagosDTO= pagosService.buscarPorId(id);
         return ResponseEntity.ok(pagosDTO);
     }
+    @GetMapping("/countPagos")
+    public long count() {
+        return pagosService.count();
+    }
+
+    @GetMapping("/estado/{estado}")
+    public List<PagosDTO> findByEstadoPago(@PathVariable boolean estado) {
+        return pagosService.findByEstadoPago(estado);
+    }
 
 }

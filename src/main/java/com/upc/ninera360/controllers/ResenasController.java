@@ -39,5 +39,13 @@ public class ResenasController {
         ResenasDTO resenasDTO = resenasService.buscarPorId(id);
         return ResponseEntity.ok(resenasDTO);
     }
-
+    @GetMapping("/countResenas")
+    public long count() {
+        return resenasService.count();
+    }
+    @GetMapping("/calificacion/{calificacion}")
+    public List<ResenasDTO> findByCalificacion(
+            @PathVariable int calificacion) {
+        return resenasService.findByCalificacion(calificacion);
+    }
 }

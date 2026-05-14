@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ChatRepository extends JpaRepository<Chat, Long> {
     public long count();
-    public List<Chat> findByCliente_IdCliente(Long idCliente);
+    public List<Chat> findByCliente_IdCliente(long idCliente);
 }

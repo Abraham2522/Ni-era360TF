@@ -65,4 +65,26 @@ public class ReservasServiceImpl implements ReservasService {
                 .map(reservas -> modelMapper.map(reservas, ReservasDTO.class))
                 .orElseThrow(() -> new RuntimeException("Reserva no encontrado con ID: " + id));
     }
+    @Override
+    public long count() {
+        long count = reservasRepositorio.count();
+        if (count == 0) {
+            throw new RuntimeException(
+                    "No existen reservas registradas");
+        }
+        return count;
+    }
+
+    @Override
+    public List<ReservasDTO> findByEstado(String estado) {
+        List<Reservas> lista =
+                reservasRepositorio.findByEstado(estado);
+        if (lista.isEmpty()) {
+            throw new RuntimeException(
+                    "No existen reservas con ese estado");
+        }
+        return lista.stream()
+                .map(r -> modelMapper.map(r, ReservasDTO.class))
+                .toList();
+    }
 }

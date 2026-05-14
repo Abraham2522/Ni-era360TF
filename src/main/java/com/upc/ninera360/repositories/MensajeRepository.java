@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface MensajeRepository extends JpaRepository<Mensaje, Long> {
-    List<Mensaje> findByChat_IdChat(Long idChat);
-}
+    List<Mensaje> findByContenido(String contenido);
+    long count();}

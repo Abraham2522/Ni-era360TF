@@ -66,7 +66,30 @@ public class UserProfileServiceImpl implements UserProfileService {
                 .map(userProfile -> modelMapper.map(userProfile, UserProfileDTO.class))
                 .orElseThrow(()->new RuntimeException("Usuario no encontrado con ID:" + id));
     }
+    @Override
+    public long count() {
+        long count = userProfileRepository.count();
+        if (count == 0) {
+            throw new RuntimeException(
+                    "No existen usuarios registrados");
+        }
+        return count;
+    }
 
+    @Override
+    public List<UserProfileDTO> findByNombre(String nombre) {
+        List<UserProfile> lista =
+                userProfileRepository.findByNombre(nombre);
+        if (lista.isEmpty()) {
+            throw new RuntimeException(
+                    "No existen usuarios con ese nombre");
+        }
+        return lista.stream()
+                .map(usuario ->
+                        modelMapper.map(usuario,
+                                UserProfileDTO.class))
+                .toList();
+    }
 
 }
 

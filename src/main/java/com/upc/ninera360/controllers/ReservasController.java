@@ -48,5 +48,16 @@ public class ReservasController {
         ReservasDTO reservasDTO = reservasService.obtenerReservaPorId(id);
         return ResponseEntity.ok(reservasDTO);
     }
+    @GetMapping("/countReservas")
+    public long count() {
+        return reservasService.count();
+    }
+
+    @GetMapping("/estado/{estado}")
+    public List<ReservasDTO> findByEstado(
+            @PathVariable String estado) {
+
+        return reservasService.findByEstado(estado);
+    }
 
 }

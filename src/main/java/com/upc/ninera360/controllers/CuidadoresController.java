@@ -1,5 +1,6 @@
 package com.upc.ninera360.controllers;
 
+import com.upc.ninera360.dtos.ClientesDTO;
 import com.upc.ninera360.dtos.CuidadoresDTO;
 import com.upc.ninera360.services.CuidadoresService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,15 @@ public class CuidadoresController {
     public ResponseEntity<CuidadoresDTO> buscarPorId(@PathVariable long id) {
         CuidadoresDTO cuidadoresDTO = cuidadoresService.buscarPorId(id);
         return ResponseEntity.ok(cuidadoresDTO);
+    }
+
+    @GetMapping("/countCuidadores")
+    public long count() {
+        return cuidadoresService.count();
+    }
+
+    @GetMapping("/descripcion/{descripcion}")
+    public List<CuidadoresDTO> findByDescripcion(@PathVariable String descripcion) {
+        return cuidadoresService.findByDescripcion(descripcion);
     }
 }

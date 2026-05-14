@@ -23,9 +23,8 @@ public class Pagos {
     private BigDecimal montoPago;
     private boolean estadoPago;
     private LocalDateTime pagadaEn;
-
+    
    @ManyToOne
    @JoinColumn(name="id_reserva")
    private Reservas reservas;
-
 }

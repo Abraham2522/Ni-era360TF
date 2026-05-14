@@ -66,4 +66,29 @@ public class PagosServiceImpl implements PagosService {
                 .map(pagos -> modelMapper.map(pagos, PagosDTO.class))
                 .orElseThrow(() -> new RuntimeException("Pagos no encontrado con ID: " + id));
     }
+    @Override
+    public long count() {
+        long count = pagosRepositorio.count();
+        if (count == 0) {
+            throw new RuntimeException(
+                    "No existen pagos registrados"
+            );
+        }
+        return count;
+    }
+
+    @Override
+    public List<PagosDTO> findByEstadoPago(boolean estadoPago) {
+        List<Pagos> lista =
+                pagosRepositorio.findByEstadoPago(estadoPago);
+        if (lista.isEmpty()) {
+            throw new RuntimeException(
+                    "No existen pagos con ese estado"
+            );
+        }
+        return lista.stream()
+                .map(p ->
+                        modelMapper.map(p, PagosDTO.class))
+                .toList();
+    }
 }

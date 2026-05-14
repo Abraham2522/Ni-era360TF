@@ -75,4 +75,25 @@ public class ResenasServiceImpl implements ResenasService {
                 .orElseThrow(() -> new RuntimeException(
                         "Reseña no encontrada con ID: " + id));
     }
+    @Override
+    public long count() {
+        long count = resenasRepositorio.count();
+        if (count == 0) {
+            throw new RuntimeException("No existen reseñas registradas");
+        }
+        return count;
+    }
+
+    @Override
+    public List<ResenasDTO> findByCalificacion(int calificacion) {
+        List<Resenas> lista =
+                resenasRepositorio.findByCalificacion(calificacion);
+        if (lista.isEmpty()) {
+            throw new RuntimeException(
+                    "No existen reseñas con esa calificación");
+        }
+        return lista.stream()
+                .map(r -> modelMapper.map(r, ResenasDTO.class))
+                .toList();
+    }
 }

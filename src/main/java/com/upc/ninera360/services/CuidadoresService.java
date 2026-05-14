@@ -10,4 +10,8 @@ public interface CuidadoresService {
     public void eliminarCuidador(long id);
     public List<CuidadoresDTO> listarCuidadores();
     public CuidadoresDTO buscarPorId(long id);
+    // count
+    public long count();
+    // buscar por descripcion
+    public List<CuidadoresDTO> findByDescripcion(String descripcion);
 }

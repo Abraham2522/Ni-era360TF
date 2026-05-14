@@ -10,4 +10,8 @@ public interface MensajeService {
     public void eliminarMensaje(long id);
     public List<MensajeDTO> listarMensajes();
     public MensajeDTO buscarPorId(long idChat);
+    // buscar mensajes por contenido
+    List<MensajeDTO> findByContenido(String contenido);
+    // count
+    long count();
 }

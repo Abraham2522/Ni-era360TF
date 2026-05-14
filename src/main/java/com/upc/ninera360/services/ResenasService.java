@@ -11,5 +11,7 @@ public interface ResenasService {
     public void eliminarResena(long id);
     public List<ResenasDTO> listarResenas();
     public ResenasDTO buscarPorId(long id);
+    public long count();
+    public List<ResenasDTO> findByCalificacion(int calificacion);
+}
 
-    }

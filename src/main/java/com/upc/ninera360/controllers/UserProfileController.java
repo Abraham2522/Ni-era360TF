@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("/usuarios")
 public class UserProfileController {
     @Autowired
     private UserProfileService userProfileService;
@@ -44,5 +44,14 @@ public class UserProfileController {
     public ResponseEntity<UserProfileDTO> buscarPorId(@PathVariable long id) {
         UserProfileDTO usuarioProfileDTO = userProfileService.buscarPorId(id);
         return ResponseEntity.ok(usuarioProfileDTO);
+    }
+    @GetMapping("/countUsuarios")
+    public long count() {
+        return userProfileService.count();
+    }
+    @GetMapping("/nombre/{nombre}")
+    public List<UserProfileDTO> findByNombre(
+            @PathVariable String nombre) {
+        return userProfileService.findByNombre(nombre);
     }
 }

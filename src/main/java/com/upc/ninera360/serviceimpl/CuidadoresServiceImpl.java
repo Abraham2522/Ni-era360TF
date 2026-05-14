@@ -22,8 +22,8 @@ public class CuidadoresServiceImpl implements CuidadoresService {
     @Transactional
     @Override
     public CuidadoresDTO insertarCuidador(CuidadoresDTO cuidadoresDTO) {
-        if(cuidadoresDTO.getIdCuidador()!=null && cuidadoresRepositorio.existsById(cuidadoresDTO.getIdCuidador())){
-            throw new RuntimeException("El cuidador con ID" +  cuidadoresDTO.getIdCuidador() + " ya existe");
+        if (cuidadoresDTO.getIdCuidador() != null && cuidadoresRepositorio.existsById(cuidadoresDTO.getIdCuidador())) {
+            throw new RuntimeException("El cuidador con ID" + cuidadoresDTO.getIdCuidador() + " ya existe");
         }
         Cuidadores cuidadores = modelMapper.map(cuidadoresDTO, Cuidadores.class);
         cuidadores = cuidadoresRepositorio.save(cuidadores);
@@ -34,11 +34,11 @@ public class CuidadoresServiceImpl implements CuidadoresService {
     @Override
     public CuidadoresDTO actualizarCuidador(CuidadoresDTO cuidadoresDTO) {
         return cuidadoresRepositorio.findById(cuidadoresDTO.getIdCuidador())
-                .map(existing ->{
+                .map(existing -> {
                     Cuidadores cuidadores = modelMapper.map(existing, Cuidadores.class);
                     return modelMapper.map(cuidadoresRepositorio.save(cuidadores), CuidadoresDTO.class);
                 })
-                .orElseThrow(() ->new RuntimeException(String.format("El cuidador con ID %d no encontrado", cuidadoresDTO.getIdCuidador())));
+                .orElseThrow(() -> new RuntimeException(String.format("El cuidador con ID %d no encontrado", cuidadoresDTO.getIdCuidador())));
     }
 
     @Transactional
@@ -62,6 +62,27 @@ public class CuidadoresServiceImpl implements CuidadoresService {
     public CuidadoresDTO buscarPorId(long id) {
         return cuidadoresRepositorio.findById(id)
                 .map(cuidadores -> modelMapper.map(cuidadores, CuidadoresDTO.class))
-                .orElseThrow(()->new RuntimeException("Cuidador no encontrado con ID: "+ id));
+                .orElseThrow(() -> new RuntimeException("Cuidador no encontrado con ID: " + id));
+    }
+
+    @Override
+    public long count() {
+        long count = cuidadoresRepositorio.count();
+        if (count == 0) {
+            throw new RuntimeException("No existen cuidadores registrados");
+        }
+        return count;
+    }
+
+    @Override
+    public List<CuidadoresDTO> findByDescripcion(String descripcion) {
+        List<Cuidadores> lista = cuidadoresRepositorio.findByDescripcion(descripcion);
+        if (lista.isEmpty()) {
+            throw new RuntimeException("No existen cuidadores con esa descripción");
+        }
+        return lista.stream()
+                .map(c -> modelMapper.map(c, CuidadoresDTO.class))
+                .toList();
     }
 }
+

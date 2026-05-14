@@ -10,4 +10,7 @@ public interface ReservasService {
     public void eliminarReserva(long id);
     public List<ReservasDTO> listarReservas();
     public ReservasDTO obtenerReservaPorId(long id);
+    public long count();
+    // Buscar por estado
+    public List<ReservasDTO> findByEstado(String estado);
 }
