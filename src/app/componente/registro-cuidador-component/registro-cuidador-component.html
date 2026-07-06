@@ -1,0 +1,213 @@
+<div class="register-layout">
+  <aside class="side-panel">
+    <h3>Niñera 360</h3>
+
+    <div class="side-content">
+      <h1>Únete a la red de cuidado más confiable.</h1>
+      <p>
+        Encuentra familias increíbles, gestiona tus horarios y construye tu carrera profesional.
+      </p>
+
+      <div class="benefit">
+        <span>✓</span>
+        <div>
+          <strong>Familias verificadas</strong>
+          <p>Entorno seguro garantizado.</p>
+        </div>
+      </div>
+
+      <div class="benefit purple">
+        <span>⏰</span>
+        <div>
+          <strong>Horario flexible</strong>
+          <p>Tú decides cuándo trabajar.</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="form-section">
+    <div class="top-link">
+      ¿Ya tienes una cuenta?
+      <a routerLink="/">Inicia sesión</a>
+    </div>
+
+    <div class="form-card">
+      <h2>Crea tu perfil profesional</h2>
+      <p>
+        Completa estos datos para comenzar a conectar con familias.
+      </p>
+
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+
+        <section>
+          <h3>1. Datos personales</h3>
+
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input
+                matInput
+                formControlName="nombre"
+                placeholder="Ej. María">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Apellidos</mat-label>
+              <input
+                matInput
+                formControlName="apellidos"
+                placeholder="Ej. González">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>DNI</mat-label>
+              <input
+                matInput
+                formControlName="dni"
+                placeholder="12345678">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Teléfono</mat-label>
+              <input
+                matInput
+                formControlName="telefono"
+                placeholder="+51 999 999 999">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Correo electrónico</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              placeholder="maria@email.com">
+          </mat-form-field>
+
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Dirección</mat-label>
+              <input
+                matInput
+                formControlName="direccion"
+                placeholder="Av. Principal 123">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="password">
+          </mat-form-field>
+        </section>
+
+        <section>
+          <h3>2. Experiencia y habilidades</h3>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Experiencia</mat-label>
+            <mat-select formControlName="experiencia">
+              <mat-option value="Menos de 1 año">
+                Menos de 1 año
+              </mat-option>
+
+              <mat-option value="1 a 2 años">
+                1 a 2 años
+              </mat-option>
+
+              <mat-option value="3 a 5 años">
+                3 a 5 años
+              </mat-option>
+
+              <mat-option value="Más de 5 años">
+                Más de 5 años
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Tarifa por hora (S/)</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="tarifa"
+              placeholder="25">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Descripción</mat-label>
+            <textarea
+              matInput
+              rows="4"
+              formControlName="descripcion"
+              placeholder="Cuéntanos sobre tu experiencia cuidando niños">
+            </textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Antecedentes</mat-label>
+            <input
+              matInput
+              formControlName="antecedentes"
+              placeholder="Sin antecedentes">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Disponibilidad</mat-label>
+            <input
+              matInput
+              formControlName="disponibilidad"
+              placeholder="Lunes a viernes, fines de semana, etc.">
+          </mat-form-field>
+        </section>
+
+        <section>
+          <h3>3. Verificación de identidad</h3>
+
+          <p class="section-text">
+            Para garantizar la seguridad de nuestra comunidad,
+            necesitamos verificar tu identidad.
+          </p>
+
+          <div class="upload-box">
+            <div class="upload-icon">📄</div>
+
+            <strong>Sube tu DNI o Pasaporte</strong>
+
+            <p>
+              Arrastra el archivo aquí o explora tus archivos.
+            </p>
+
+            <small>
+              Formatos soportados: JPG, PNG, PDF.
+            </small>
+
+            <input type="file" hidden #fileInput>
+
+            <button
+              mat-stroked-button
+              type="button"
+              (click)="fileInput.click()">
+              Seleccionar archivo
+            </button>
+          </div>
+        </section>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="submit-btn">
+          Crear perfil →
+        </button>
+
+      </form>
+    </div>
+  </main>
+</div>

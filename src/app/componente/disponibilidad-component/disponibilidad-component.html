@@ -1,0 +1,163 @@
+<div class="disponibilidad-page">
+
+  <div class="header-section">
+
+    <button mat-stroked-button color="primary" routerLink="/home-cuidador">
+      ← Volver
+    </button>
+
+    <div>
+      <h1>Mi disponibilidad 🕒</h1>
+      <p>Configura tus horarios y días disponibles para recibir reservas.</p>
+    </div>
+
+  </div>
+
+  <div class="stats">
+
+    <mat-card>
+      <h2>5</h2>
+      <p>Días activos</p>
+    </mat-card>
+
+    <mat-card>
+      <h2>40h</h2>
+      <p>Disponibilidad semanal</p>
+    </mat-card>
+
+    <mat-card>
+      <h2>Activa</h2>
+      <p>Estado actual</p>
+    </mat-card>
+
+  </div>
+
+  <mat-card class="schedule-card">
+
+    <h2>Horario semanal</h2>
+
+    <div class="day-row">
+      <span>Lunes</span>
+
+      <mat-slide-toggle checked></mat-slide-toggle>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inicio</mat-label>
+        <mat-select>
+          <mat-option>08:00</mat-option>
+          <mat-option>09:00</mat-option>
+          <mat-option>10:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fin</mat-label>
+        <mat-select>
+          <mat-option>17:00</mat-option>
+          <mat-option>18:00</mat-option>
+          <mat-option>19:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="day-row">
+      <span>Martes</span>
+
+      <mat-slide-toggle checked></mat-slide-toggle>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inicio</mat-label>
+        <mat-select>
+          <mat-option>08:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fin</mat-label>
+        <mat-select>
+          <mat-option>18:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="day-row">
+      <span>Miércoles</span>
+
+      <mat-slide-toggle checked></mat-slide-toggle>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inicio</mat-label>
+        <mat-select>
+          <mat-option>08:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fin</mat-label>
+        <mat-select>
+          <mat-option>18:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="day-row">
+      <span>Jueves</span>
+
+      <mat-slide-toggle checked></mat-slide-toggle>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inicio</mat-label>
+        <mat-select>
+          <mat-option>08:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fin</mat-label>
+        <mat-select>
+          <mat-option>18:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="day-row">
+      <span>Viernes</span>
+
+      <mat-slide-toggle checked></mat-slide-toggle>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inicio</mat-label>
+        <mat-select>
+          <mat-option>08:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fin</mat-label>
+        <mat-select>
+          <mat-option>18:00</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="day-row disabled">
+      <span>Sábado</span>
+
+      <mat-slide-toggle></mat-slide-toggle>
+    </div>
+
+    <div class="day-row disabled">
+      <span>Domingo</span>
+
+      <mat-slide-toggle></mat-slide-toggle>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary">
+        Guardar disponibilidad
+      </button>
+    </div>
+
+  </mat-card>
+
+</div>

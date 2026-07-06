@@ -1,0 +1,58 @@
+.role-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eaf4ff, #f8fbff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.role-card {
+  width: 850px;
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.role-header h1 {
+  color: #0097b2;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.role-options {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.option-card {
+  flex: 1;
+  cursor: pointer;
+  padding: 30px;
+  transition: 0.3s;
+  border-radius: 16px;
+}
+
+.option-card:hover {
+  transform: translateY(-6px);
+}
+
+.option-card mat-icon {
+  font-size: 60px;
+  width: 60px;
+  height: 60px;
+  color: #0097b2;
+}
+
+.option-card h2 {
+  margin-top: 20px;
+}
+
+.login-text {
+  margin-top: 30px;
+}
+
+.login-text a {
+  color: #0097b2;
+  font-weight: 600;
+}

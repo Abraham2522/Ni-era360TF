@@ -1,0 +1,283 @@
+.register-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f4f8fd;
+  font-family: Arial, sans-serif;
+}
+
+.side-panel {
+  width: 32%;
+  background: linear-gradient(180deg, #dff5ff, #eef7ff);
+  padding: 36px 34px;
+  box-sizing: border-box;
+}
+
+.side-panel h3 {
+  color: #008aa6;
+  font-size: 22px;
+  margin: 0;
+}
+
+.side-content {
+  margin-top: 155px;
+}
+
+.side-content h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  color: #023047;
+  margin: 0 0 20px;
+}
+
+.side-content > p {
+  color: #40596b;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.benefit {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  box-shadow: 0 8px 22px rgba(2, 48, 71, 0.08);
+}
+
+.benefit span {
+  min-width: 38px;
+  height: 38px;
+  background: #0097b2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.benefit.purple span {
+  background: #9b7de3;
+}
+
+.benefit strong {
+  color: #023047;
+  font-size: 15px;
+}
+
+.benefit p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #52616b;
+}
+
+.form-section {
+  flex: 1;
+  padding: 32px 80px;
+  box-sizing: border-box;
+}
+
+.top-link {
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 45px;
+}
+
+.top-link a {
+  color: #008aa6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-card {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+.form-card h2 {
+  color: #023047;
+  font-size: 34px;
+  margin: 0 0 8px;
+}
+
+.form-card > p {
+  color: #607080;
+  margin-bottom: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+section {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 12px 30px rgba(2, 48, 71, 0.1);
+}
+
+section h3 {
+  margin: 0 0 24px;
+  color: #023047;
+  font-size: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 18px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #023047;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #c8d0dc;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 15px;
+  color: #102033;
+  outline: none;
+  background: white;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0097b2;
+  box-shadow: 0 0 0 3px rgba(0, 151, 178, 0.12);
+}
+
+input,
+select {
+  height: 52px;
+}
+
+textarea {
+  min-height: 120px;
+  padding-top: 14px;
+  resize: none;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.skills span {
+  border: 1px solid #c8d0dc;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 13px;
+  background: #f8fafc;
+  color: #40596b;
+}
+
+.skills span:nth-child(1),
+.skills span:nth-child(5) {
+  background: #0097b2;
+  color: white;
+  border-color: #0097b2;
+}
+
+.section-text {
+  color: #607080;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.upload-box {
+  border: 2px dashed #b8c8d8;
+  border-radius: 16px;
+  background: #f4f9fc;
+  padding: 34px;
+  text-align: center;
+}
+
+.upload-icon {
+  width: 52px;
+  height: 52px;
+  background: #dff5ff;
+  color: #0097b2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 14px;
+  font-size: 22px;
+}
+
+.upload-box p {
+  margin: 0 0 4px;
+  color: #40596b;
+  font-weight: 600;
+}
+
+.upload-box small {
+  color: #607080;
+}
+
+button {
+  width: 240px;
+  height: 48px;
+  border: none;
+  border-radius: 28px;
+  background: white;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin: 12px auto 0;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 117, 143, 0.25);
+}
+
+button:hover {
+  background: #0097b2;
+}
+
+@media (max-width: 900px) {
+  .register-layout {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    width: 100%;
+  }
+
+  .side-content {
+    margin-top: 45px;
+  }
+
+  .form-section {
+    padding: 28px;
+  }
+
+  .top-link {
+    margin-bottom: 35px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

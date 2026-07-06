@@ -1,0 +1,144 @@
+.page {
+  min-height: 100vh;
+  background: #f4f8fd;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+.top-bar {
+  background: #0097b2;
+  border-radius: 16px 16px 0 0;
+  padding: 18px 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h2 {
+  color: white;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-ninera {
+  background: white !important;
+  color: #0097b2 !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.btn-ninera:hover {
+  background: #eefcff !important;
+}
+
+/* TABLA */
+
+.table-container {
+  background: #fffdf5;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 151, 178, 0.08);
+}
+
+.tabla-reservas {
+  width: 100%;
+  background: #fffdf5;
+}
+
+/* CABECERA */
+
+.mat-mdc-header-row {
+  background: #0097b2 !important;
+}
+
+.mat-mdc-header-cell {
+  color: white !important;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* FILAS */
+
+.mat-mdc-row {
+  background: #fffdf5 !important;
+}
+
+.mat-mdc-row:hover {
+  background: #fff8e8 !important;
+}
+
+.mat-mdc-cell {
+  color: #023047;
+  font-size: 14px;
+}
+
+/* BOTONES */
+
+.btn-edit {
+  background: #008aa6 !important;
+  color: white !important;
+  border-radius: 10px;
+  min-width: 65px;
+}
+
+.btn-edit:hover {
+  background: #00748c !important;
+}
+
+.btn-delete {
+  background: #023047 !important;
+  color: white !important;
+  border-radius: 10px;
+  min-width: 65px;
+}
+
+.btn-delete:hover {
+  background: #011b2b !important;
+}
+
+.btn-edit mat-icon,
+.btn-delete mat-icon {
+  color: white;
+}
+
+/* PAGINADOR */
+
+.mat-mdc-paginator {
+  background: #fffdf5 !important;
+  color: #023047;
+}
+
+/* BORDES */
+
+.mat-mdc-table {
+  border-collapse: collapse;
+}
+
+.mat-mdc-row {
+  border-bottom: 1px solid #ececec;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}

@@ -1,0 +1,111 @@
+<div class="buscar-page">
+
+  <div class="top-bar">
+
+    <h2>Buscar Cuidadores</h2>
+
+    <div class="menu-buttons">
+
+      <button
+        mat-raised-button
+        class="btn-ninera"
+        routerLink="/home-cliente">
+        Home
+      </button>
+
+      <button
+        mat-raised-button
+        class="btn-ninera"
+        (click)="listarCuidadores()">
+        Listar
+      </button>
+
+      <button
+        mat-raised-button
+        class="btn-ninera"
+        routerLink="/mis-reservas-component">
+        Mis Reservas
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="caregivers-grid">
+
+    @for (cuidador of cuidadores; track cuidador.idCuidador) {
+
+      <mat-card class="caregiver-card">
+
+        <div class="avatar">
+          👩‍🍼
+        </div>
+
+        <mat-card-title>
+          {{ cuidador.nombre }}
+          {{ cuidador.apellidos }}
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          Tarifa: S/ {{ cuidador.tarifa }} por hora
+        </mat-card-subtitle>
+
+        <mat-card-content>
+
+          <p>
+            {{ cuidador.descripcion }}
+          </p>
+
+          <p>
+            <strong>Experiencia:</strong>
+            {{ cuidador.experiencia }}
+          </p>
+
+          <p>
+            <strong>Disponibilidad:</strong>
+            {{ cuidador.disponibilidad }}
+          </p>
+
+          <p>
+            <strong>Antecedentes:</strong>
+            {{ cuidador.antecedentes }}
+          </p>
+
+          <div class="details">
+
+            <span>
+              ⭐ {{ cuidador.calificacion }}
+            </span>
+
+            <span>
+              {{ cuidador.activo ? 'Disponible' : 'No disponible' }}
+            </span>
+
+          </div>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+
+          <button
+            mat-raised-button
+            class="btn-profile">
+            Ver perfil
+          </button>
+
+          <button
+            mat-raised-button
+            class="btn-reservar"
+            (click)="reservar(cuidador)">
+            Reservar
+          </button>
+
+        </mat-card-actions>
+
+      </mat-card>
+
+    }
+
+  </div>
+
+</div>

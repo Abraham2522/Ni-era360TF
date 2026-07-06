@@ -1,0 +1,101 @@
+<div class="register-layout">
+  <aside class="side-panel">
+    <h3>Niñera 360</h3>
+
+    <div class="side-content">
+      <h1>Únete como familia</h1>
+      <p>
+        Encuentra niñeras confiables, gestiona tus reservas y cuida a quienes
+        más quieres.
+      </p>
+
+      <div class="benefit">
+        <span>✓</span>
+        <div>
+          <strong>Niñeras verificadas</strong>
+          <p>Perfiles seguros para tu familia.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <span>★</span>
+        <div>
+          <strong>Reservas fáciles</strong>
+          <p>Organiza el cuidado desde un solo lugar.</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="form-section">
+    <div class="top-link">
+      ¿Ya tienes una cuenta?
+      <a routerLink="/">Inicia sesión</a>
+    </div>
+
+    <div class="form-card">
+      <h2>Crea tu cuenta familiar</h2>
+      <p>Completa tus datos para comenzar a buscar una niñera confiable.</p>
+
+      <p class="required-note">* Todos los campos son obligatorios</p>
+
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <h3>1. Datos personales</h3>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre *</mat-label>
+            <input matInput formControlName="nombre" placeholder="Ej. María" />
+            <mat-error>El nombre es obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Apellidos *</mat-label>
+            <input matInput formControlName="apellidos" placeholder="Ej. González" />
+            <mat-error>Los apellidos son obligatorios</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>DNI *</mat-label>
+            <input matInput formControlName="dni" placeholder="Ej. 12345678" />
+            <mat-error>El DNI es obligatorio</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo electrónico *</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="maria@email.com" />
+          <mat-error>Ingresa un correo válido</mat-error>
+        </mat-form-field>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Teléfono *</mat-label>
+            <input matInput formControlName="telefono" placeholder="+51 999 999 999" />
+            <mat-error>El teléfono es obligatorio</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Dirección *</mat-label>
+          <input matInput formControlName="direccion" placeholder="Ej. Av. Principal 123" />
+          <mat-error>La dirección es obligatoria</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña *</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="********" />
+          <mat-error>La contraseña es obligatoria</mat-error>
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="submit-btn">
+          Crear cuenta
+        </button>
+      </form>
+    </div>
+  </main>
+</div>

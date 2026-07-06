@@ -1,0 +1,137 @@
+<div class="reservas-page">
+
+  <div class="header-section">
+
+    <button mat-stroked-button color="primary" routerLink="/home-cuidador">
+      ← Volver
+    </button>
+
+    <div>
+      <h1>Mis reservas 📅</h1>
+      <p>Gestiona solicitudes de familias y servicios programados.</p>
+    </div>
+
+  </div>
+
+  <div class="stats">
+
+    <mat-card class="stat-card">
+      <h2>{{ totalPendientes }}</h2>
+      <p>Solicitudes pendientes</p>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <h2>{{ totalConfirmadas }}</h2>
+      <p>Reservas confirmadas</p>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <h2>{{ totalFinalizadas }}</h2>
+      <p>Servicios realizados</p>
+    </mat-card>
+
+  </div>
+
+  <div class="actions">
+    <button
+      mat-raised-button
+      class="btn-ver"
+      (click)="mostrarReservas = !mostrarReservas">
+
+      {{ mostrarReservas ? 'Ocultar reservas' : 'Ver reservas' }}
+
+    </button>
+  </div>
+
+  <div class="reservas-list" *ngIf="mostrarReservas">
+
+    <mat-card
+      class="reserva-card"
+      *ngFor="let reserva of reservasCuidador">
+
+      <div class="reserva-info">
+
+        <div class="avatar">👨‍👩‍👧</div>
+
+        <div class="info-text">
+          <h3>Reserva de Cliente #{{ reserva.idCliente }}</h3>
+
+          <p>
+            <strong>Inicio:</strong>
+            {{ reserva.horaInicio | date:'dd/MM/yyyy HH:mm':'-0500' }}
+          </p>
+
+          <p>
+            <strong>Fin:</strong>
+            {{ reserva.horaFin | date:'dd/MM/yyyy HH:mm':'-0500' }}
+          </p>
+
+          <p>
+            <strong>Dirección:</strong>
+            {{ reserva.direccionServicio }}
+          </p>
+        </div>
+
+      </div>
+
+      <div class="reserva-actions">
+
+        <span
+          class="estado"
+          [class.pendiente]="reserva.estado === 'PENDIENTE'"
+          [class.confirmada]="reserva.estado === 'CONFIRMADA'"
+          [class.finalizada]="reserva.estado === 'FINALIZADA'"
+          [class.rechazada]="reserva.estado === 'RECHAZADA'"
+          [class.cancelada]="reserva.estado === 'CANCELADA'">
+
+          {{ reserva.estado }}
+
+        </span>
+
+        <button
+          mat-raised-button
+          color="primary"
+          *ngIf="reserva.estado === 'PENDIENTE'"
+          (click)="aceptarReserva(reserva)">
+          Aceptar
+        </button>
+
+        <button
+          mat-stroked-button
+          color="warn"
+          *ngIf="reserva.estado === 'PENDIENTE'"
+          (click)="rechazarReserva(reserva)">
+          Rechazar
+        </button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          *ngIf="reserva.estado !== 'PENDIENTE'"
+          (click)="verDetalle(reserva)">
+          Ver detalle
+        </button>
+
+        <button
+          mat-stroked-button
+          color="warn"
+          *ngIf="reserva.estado === 'CONFIRMADA'"
+          (click)="cancelarReserva(reserva)">
+          Cancelar
+        </button>
+
+      </div>
+
+    </mat-card>
+
+    <div
+      class="empty"
+      *ngIf="reservasCuidador.length === 0">
+
+      No existen reservas registradas para este cuidador.
+
+    </div>
+
+  </div>
+
+</div>

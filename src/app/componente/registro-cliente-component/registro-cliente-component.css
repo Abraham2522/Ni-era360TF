@@ -1,0 +1,175 @@
+.register-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f8fd;
+  font-family: Arial, sans-serif;
+}
+
+.side-panel {
+  width: 32%;
+  background: linear-gradient(180deg, #dff5ff, #eef7ff);
+  padding: 36px 34px;
+  box-sizing: border-box;
+}
+
+.side-panel h3 {
+  color: #008aa6;
+  font-size: 22px;
+  margin: 0;
+}
+
+.side-content {
+  margin-top: 150px;
+}
+
+.side-content h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  color: #023047;
+  margin: 0 0 18px;
+}
+
+.side-content > p {
+  color: #40596b;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.benefit {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  box-shadow: 0 8px 22px rgba(2, 48, 71, 0.08);
+}
+
+.benefit span {
+  min-width: 38px;
+  height: 38px;
+  background: #0097b2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.benefit strong {
+  color: #023047;
+  font-size: 15px;
+}
+
+.benefit p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #52616b;
+}
+
+.form-section {
+  flex: 1;
+  padding: 32px 80px;
+  box-sizing: border-box;
+}
+
+.top-link {
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 60px;
+}
+
+.top-link a {
+  color: #008aa6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-card {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form-card h2 {
+  font-size: 32px;
+  color: #023047;
+  margin: 0 0 8px;
+}
+
+.form-card > p {
+  color: #607080;
+  margin-bottom: 20px;
+}
+
+.required-note {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+form {
+  background: white;
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 12px 30px rgba(2, 48, 71, 0.1);
+}
+
+form h3 {
+  margin: 0 0 24px;
+  color: #023047;
+  font-size: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 18px;
+}
+
+.row mat-form-field {
+  flex: 1;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  width: 240px;
+  height: 48px;
+  border-radius: 28px;
+  display: block;
+  margin: 28px auto 0;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .register-layout {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    width: 100%;
+  }
+
+  .side-content {
+    margin-top: 45px;
+  }
+
+  .form-section {
+    padding: 28px;
+  }
+
+  .top-link {
+    margin-bottom: 35px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

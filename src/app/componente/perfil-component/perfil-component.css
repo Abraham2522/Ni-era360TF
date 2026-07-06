@@ -1,0 +1,172 @@
+.perfil-page {
+  min-height: 100vh;
+  padding: 40px 54px;
+  background: linear-gradient(135deg, #eef9fc, #f4f8fd);
+  font-family: Arial, sans-serif;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 35px;
+}
+
+.header-section h1 {
+  color: #007f99;
+  font-size: 50px;
+  margin: 0;
+}
+
+.header-section p {
+  color: #4b5f6f;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.header-section button {
+  height: 46px;
+  border-radius: 14px;
+  font-weight: 700;
+  padding: 0 24px;
+  background: white;
+}
+
+.perfil-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+}
+
+.profile-card {
+  padding: 34px 28px;
+  border-radius: 28px;
+  text-align: center;
+  border-top: 7px solid #0097b2;
+  box-shadow: 0 12px 28px rgba(0, 127, 153, 0.14);
+  height: fit-content;
+  background: white;
+}
+
+.avatar {
+  width: 125px;
+  height: 125px;
+  background: linear-gradient(135deg, #dff5ff, #eef9fc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  margin: 0 auto 18px;
+}
+
+.profile-card h2 {
+  color: #007f99;
+  font-size: 30px;
+  margin: 0;
+}
+
+.profile-card p {
+  color: #555;
+  font-size: 17px;
+  margin: 8px 0 25px;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.profile-stats div {
+  background: #eef9fc;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.profile-stats h3 {
+  color: #007f99;
+  font-size: 30px;
+  margin: 0;
+}
+
+.profile-stats span {
+  color: #555;
+  font-size: 14px;
+}
+
+.form-card {
+  padding: 36px;
+  border-radius: 28px;
+  box-shadow: 0 12px 28px rgba(0, 127, 153, 0.14);
+  background: white;
+}
+
+.form-card h2 {
+  color: #007f99;
+  font-size: 32px;
+  margin: 0 0 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-grid mat-form-field {
+  width: 100%;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.actions button {
+  height: 48px;
+  border-radius: 14px;
+  font-weight: 700;
+  padding: 0 26px;
+}
+
+@media (max-width: 1000px) {
+  .perfil-page {
+    padding: 28px;
+  }
+
+  .perfil-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: span 1;
+  }
+
+  .header-section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-section h1 {
+    font-size: 40px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,88 @@
+<div class="pagos-page">
+
+  <div class="header-section">
+
+    <button mat-stroked-button color="primary" routerLink="/home-cuidador">
+      ← Volver
+    </button>
+
+    <div>
+      <h1>Pagos recibidos 💰</h1>
+      <p>Consulta tus ingresos y pagos pendientes.</p>
+    </div>
+
+  </div>
+
+  <div class="stats">
+
+    <mat-card class="stat-card">
+      <h2>S/ {{ totalPagado }}</h2>
+      <p>Total pagado</p>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <h2>S/ {{ totalPendiente }}</h2>
+      <p>Pendiente de pago</p>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <h2>{{ pagosCuidador.length }}</h2>
+      <p>Pagos registrados</p>
+    </mat-card>
+
+  </div>
+
+  <div class="actions">
+    <button
+      mat-raised-button
+      class="btn-ver"
+      (click)="mostrarPagos = !mostrarPagos">
+
+      {{ mostrarPagos ? 'Ocultar pagos' : 'Ver pagos' }}
+
+    </button>
+  </div>
+
+  <div class="payments-list" *ngIf="mostrarPagos">
+
+    <mat-card
+      class="payment-card"
+      *ngFor="let pago of pagosCuidador">
+
+      <div class="payment-info">
+        <h3>Reserva de {{ obtenerNombreCliente(pago.idReserva) }}</h3>
+        <p>
+          {{ pago.pagadaEn | date:'dd/MM/yyyy HH:mm':'-0500' }}
+        </p>
+
+        <p>
+          Método: {{ pago.metodoPago }}
+        </p>
+      </div>
+
+      <div class="payment-amount">
+        <strong>S/ {{ pago.montoPago }}</strong>
+      </div>
+
+      <span
+        class="status"
+        [class.paid]="pago.estadoPago"
+        [class.pending]="!pago.estadoPago">
+
+        {{ pago.estadoPago ? 'Pagado' : 'Pendiente' }}
+
+      </span>
+
+    </mat-card>
+
+    <div
+      class="empty"
+      *ngIf="pagosCuidador.length === 0">
+
+      No existen pagos registrados para este cuidador.
+
+    </div>
+
+  </div>
+
+</div>

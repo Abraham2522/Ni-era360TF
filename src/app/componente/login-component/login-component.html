@@ -1,0 +1,72 @@
+<div class="login-page">
+  <mat-card class="login-card">
+    <div class="login-header">
+      <h1>Niñera 360</h1>
+      <p>Bienvenido de nuevo. Inicia sesión para continuar.</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Usuario</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input
+          matInput
+          type="text"
+          formControlName="username"
+          placeholder="Ingresa tu usuario"
+        />
+        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+          El usuario es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          placeholder="Ingresa tu contraseña"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword"
+        >
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          La contraseña es obligatoria
+        </mat-error>
+      </mat-form-field>
+
+      <div class="form-options">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <p class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="btn-login"
+        [disabled]="loginForm.invalid || isSubmitting"
+      >
+        {{ isSubmitting ? 'Verificando...' : 'Iniciar sesión' }}
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <p>
+        ¿No tienes cuenta?
+        <a routerLink="/seleccionar-rol">Regístrate aquí</a>
+      </p>
+    </div>
+  </mat-card>
+</div>

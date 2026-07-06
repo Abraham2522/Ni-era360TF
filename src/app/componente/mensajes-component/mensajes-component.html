@@ -1,0 +1,87 @@
+<div class="page">
+
+  <div class="top-bar">
+    <h2>Mensajes</h2>
+
+    <div class="menu-buttons">
+      <button mat-raised-button class="btn-ninera" routerLink="/home-cliente">
+        Home
+      </button>
+
+      <button mat-raised-button class="btn-ninera" (click)="listarMensajes()">
+        Listar
+      </button>
+
+      <button mat-raised-button class="btn-ninera" (click)="registrarMensaje()">
+        Registrar
+      </button>
+    </div>
+  </div>
+
+  <div class="table-container">
+
+    <table mat-table [dataSource]="dataSource" class="tabla-mensajes">
+
+      <ng-container matColumnDef="idMensaje">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let mensaje">{{ mensaje.idMensaje }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="idChat">
+        <th mat-header-cell *matHeaderCellDef>Chat</th>
+        <td mat-cell *matCellDef="let mensaje">{{ mensaje.idChat }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="idUsuario">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let mensaje">{{ mensaje.idUsuario }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="contenido">
+        <th mat-header-cell *matHeaderCellDef>Contenido</th>
+        <td mat-cell *matCellDef="let mensaje">{{ mensaje.contenido }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef>Fecha</th>
+        <td mat-cell *matCellDef="let mensaje">
+          {{ mensaje.fecha | date:'dd/MM/yyyy hh:mm a' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="leido">
+        <th mat-header-cell *matHeaderCellDef>Leído</th>
+        <td mat-cell *matCellDef="let mensaje">
+          {{ mensaje.leido ? 'Sí' : 'No' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let mensaje">
+          <button mat-raised-button class="btn-delete" (click)="eliminarMensaje(mensaje.idMensaje)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actualizar">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let mensaje">
+          <button mat-raised-button class="btn-edit" (click)="actualizarMensaje(mensaje)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+
+    </table>
+
+    <mat-paginator [pageSize]="4" [pageSizeOptions]="[4, 8, 12]" showFirstLastButtons>
+    </mat-paginator>
+
+  </div>
+
+</div>

@@ -1,0 +1,131 @@
+<div class="perfil-page">
+
+  <div class="header-section">
+    <button mat-stroked-button color="primary" routerLink="/home-cuidador">
+      ← Volver
+    </button>
+
+    <div>
+      <h1>Mi perfil profesional 👩🏻‍🍼</h1>
+      <p>Actualiza tu experiencia, tarifas y especialidades como nana.</p>
+    </div>
+  </div>
+
+  <div class="perfil-layout">
+
+    <mat-card class="profile-card">
+      <div class="avatar">👩🏻‍🍼</div>
+
+      <h2>{{ usuario.nombre }} {{ usuario.apellidos }}</h2>
+
+      <p>Cuidadora verificada</p>
+
+      <div class="profile-stats">
+        <div>
+          <h3>{{ cuidador.calificacion }}</h3>
+          <span>Calificación</span>
+        </div>
+
+        <div>
+          <h3>24</h3>
+          <span>Servicios</span>
+        </div>
+      </div>
+
+      <span class="badge">Disponible</span>
+    </mat-card>
+
+    <mat-card class="form-card">
+      <h2>Datos profesionales</h2>
+
+      <div class="form-grid">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombres</mat-label>
+          <input matInput name="nombre" [(ngModel)]="usuario.nombre">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Apellidos</mat-label>
+          <input matInput name="apellidos" [(ngModel)]="usuario.apellidos">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>DNI</mat-label>
+          <input matInput name="dni" [(ngModel)]="usuario.dni">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput name="correo" [(ngModel)]="usuario.correo">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Teléfono</mat-label>
+          <input matInput name="telefono" [(ngModel)]="usuario.telefono">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Dirección</mat-label>
+          <input matInput name="direccion" [(ngModel)]="usuario.direccion">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Disponibilidad</mat-label>
+          <input matInput name="disponibilidad" [(ngModel)]="cuidador.disponibilidad">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Experiencia</mat-label>
+          <input matInput name="experiencia" [(ngModel)]="cuidador.experiencia">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Tarifa por hora</mat-label>
+          <input matInput name="tarifa" [(ngModel)]="cuidador.tarifa">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>Descripción profesional</mat-label>
+          <textarea
+            matInput
+            rows="4"
+            name="descripcion"
+            [(ngModel)]="cuidador.descripcion">
+          </textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>Antecedentes</mat-label>
+          <textarea
+            matInput
+            rows="3"
+            name="antecedentes"
+            [(ngModel)]="cuidador.antecedentes">
+          </textarea>
+        </mat-form-field>
+
+      </div>
+
+      <div class="actions">
+
+        <button
+          mat-stroked-button
+          color="warn"
+          (click)="eliminarPerfil()">
+          Desactivar perfil
+        </button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="guardarCambios()">
+          Guardar cambios
+        </button>
+
+      </div>
+    </mat-card>
+
+  </div>
+
+</div>

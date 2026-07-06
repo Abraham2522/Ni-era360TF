@@ -1,0 +1,139 @@
+.buscar-page {
+  min-height: 100vh;
+  background: #f4f8fd;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.top-bar {
+  background: #0097b2;
+  border-radius: 16px;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h2 {
+  color: white;
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-ninera {
+  background: white !important;
+  color: #0097b2 !important;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.filters-card {
+  margin-top: 25px;
+  padding: 25px;
+  background: #fffdf5 !important;
+  border-radius: 16px !important;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 151, 178, 0.08);
+}
+
+.btn-search {
+  background: #0097b2 !important;
+  color: white !important;
+  font-weight: 700;
+  height: 56px;
+  border-radius: 8px;
+}
+
+.caregivers-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.caregiver-card {
+  background: #fffdf5 !important;
+  border-radius: 18px !important;
+  border-top: 6px solid #0097b2;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(0, 151, 178, 0.10);
+}
+
+.avatar {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+mat-card-title {
+  color: #008aa6;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+mat-card-subtitle {
+  color: #023047;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+mat-card-content p {
+  color: #023047;
+  font-size: 15px;
+  margin: 18px 0;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  color: #023047;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 !important;
+  margin-top: 15px;
+}
+
+mat-card-actions button {
+  flex: 1;
+}
+
+.btn-profile {
+  background: white !important;
+  color: #0097b2 !important;
+  border: 1px solid #0097b2 !important;
+  font-weight: 700;
+}
+
+.btn-reservar {
+  background: #0097b2 !important;
+  color: white !important;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .filters-card {
+    grid-template-columns: 1fr;
+  }
+
+  .caregivers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,158 @@
+.resenas-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f4f8fd;
+  font-family: Arial, sans-serif;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 35px;
+}
+
+.header-section h1 {
+  margin: 0;
+  color: #007f99;
+  font-size: 42px;
+}
+
+.header-section p {
+  margin-top: 8px;
+  color: #666;
+}
+
+.header-section button {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 28px;
+  border-radius: 20px;
+  border-top: 6px solid #ffc107;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 52px;
+  color: #0097b2;
+}
+
+.stat-card p {
+  margin-top: 8px;
+  color: #666;
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.btn-ver {
+  background: #0097b2 !important;
+  color: white !important;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.review-card {
+  padding: 28px;
+  border-radius: 24px;
+  border-top: 6px solid #0097b2;
+  box-shadow: 0 12px 28px rgba(0, 127, 153, 0.12);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #fff3cd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.review-header h3 {
+  color: #007f99;
+  font-size: 22px;
+  margin: 0;
+}
+
+.review-header p {
+  color: #666;
+  margin: 4px 0 0;
+}
+
+.stars {
+  font-size: 25px;
+  margin: 24px 0 18px;
+}
+
+.comment {
+  color: #333;
+  font-size: 17px;
+  line-height: 1.5;
+  min-height: 80px;
+}
+
+.badge {
+  display: inline-block;
+  background: #dff7e8;
+  color: #087a35;
+  padding: 10px 16px;
+  border-radius: 22px;
+  font-weight: 700;
+}
+
+.badge.secondary {
+  background: #e8f4ff;
+  color: #007f99;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  color: #666;
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .stats,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

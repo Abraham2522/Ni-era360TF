@@ -1,0 +1,117 @@
+<div class="resenas-page">
+
+  <div class="header-section">
+
+    <button
+      mat-stroked-button
+      color="primary"
+      routerLink="/home-cuidador">
+
+      ← Volver
+
+    </button>
+
+    <div>
+      <h1>Mis reseñas ⭐</h1>
+      <p>
+        Revisa las valoraciones que las familias dejaron sobre tus servicios.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="stats">
+
+    <mat-card class="stat-card">
+      <h2>{{ promedioGeneral }}</h2>
+      <p>Promedio general</p>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <h2>{{ totalResenas }}</h2>
+      <p>Reseñas recibidas</p>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <h2>{{ familiasSatisfechas }}%</h2>
+      <p>Familias satisfechas</p>
+    </mat-card>
+
+  </div>
+
+  <div class="actions">
+
+    <button
+      mat-raised-button
+      class="btn-ver"
+      (click)="mostrarResenas = !mostrarResenas">
+
+      {{ mostrarResenas ? 'Ocultar reseñas' : 'Ver reseñas' }}
+
+    </button>
+
+  </div>
+
+  <div
+    class="reviews-grid"
+    *ngIf="mostrarResenas">
+
+    <mat-card
+      class="review-card"
+      *ngFor="let resena of resenasCuidador">
+
+      <div class="review-header">
+
+        <div class="avatar">
+          👨‍👩‍👧
+        </div>
+
+        <div>
+
+          <h3>
+            Reseña de {{ obtenerNombreCliente(resena.idReserva) }}
+          </h3>
+
+          <p>
+            Reserva #{{ resena.idReserva }}
+          </p>
+
+          <p>
+            {{ resena.creadoEn | date:'dd/MM/yyyy HH:mm':'-0500' }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="stars">
+        {{ obtenerEstrellas(resena.calificacion) }}
+      </div>
+
+      <p class="comment">
+        {{ resena.comentario }}
+      </p>
+
+      <span
+        class="badge"
+        [class.secondary]="!esBuenaResena(resena.calificacion)">
+
+        {{ esBuenaResena(resena.calificacion)
+        ? 'Buen servicio'
+        : 'Por mejorar' }}
+
+      </span>
+
+    </mat-card>
+
+    <div
+      class="empty"
+      *ngIf="resenasCuidador.length === 0">
+
+      No existen reseñas registradas para este cuidador.
+
+    </div>
+
+  </div>
+
+</div>

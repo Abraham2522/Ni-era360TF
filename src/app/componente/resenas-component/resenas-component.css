@@ -1,0 +1,68 @@
+.page {
+  min-height: 100vh;
+  background: #f4f8fd;
+  padding: 28px 34px;
+  font-family: Arial, sans-serif;
+}
+
+.top-bar {
+  background: #0097b2;
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.btn-ninera {
+  background: white !important;
+  color: #008aa6 !important;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0 24px;
+}
+
+.table-container {
+  background: #fffdf6;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 127, 153, 0.12);
+}
+
+.tabla-resenas {
+  width: 100%;
+}
+
+th {
+  background: #0097b2 !important;
+  color: white !important;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+td {
+  font-size: 14px;
+}
+
+.btn-delete {
+  background: #00344d !important;
+  color: white !important;
+  border-radius: 9px;
+}
+
+.btn-edit {
+  background: #0097b2 !important;
+  color: white !important;
+  border-radius: 9px;
+}
