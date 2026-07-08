@@ -37,7 +37,7 @@ export class LoginComponent {
   isSubmitting = false;
   hidePassword = true;
 
-  private readonly API_URL = 'http://localhost:8080/api/authenticate';
+  private readonly API_URL = 'https://ni-era360tfbackend.onrender.com/api/authenticate';
 
   constructor(
     private fb: FormBuilder,

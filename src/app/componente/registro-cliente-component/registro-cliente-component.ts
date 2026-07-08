@@ -30,7 +30,7 @@ export class RegistroClienteComponent {
 
   registroForm: FormGroup;
 
-  private readonly API_URL = 'http://localhost:8080/api/register-cliente';
+  private readonly API_URL = 'https://ni-era360tfbackend.onrender.com/api/register-cliente';
 
   constructor(
     private fb: FormBuilder,

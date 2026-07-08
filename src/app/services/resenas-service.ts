@@ -15,7 +15,7 @@ export interface Resena {
   providedIn: 'root',
 })
 export class ResenasService {
-  private url = 'http://localhost:8080/resenas';
+  private url = 'https://ni-era360tfbackend.onrender.com/resenas';
 
   constructor(private http: HttpClient) {}
 

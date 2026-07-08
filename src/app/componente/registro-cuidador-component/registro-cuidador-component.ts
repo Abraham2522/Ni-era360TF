@@ -32,7 +32,7 @@ export class RegistroCuidadorComponent {
 
   registroForm: FormGroup;
 
-  private readonly API_URL = 'http://localhost:8080/api/register-cuidador';
+  private readonly API_URL = 'https://ni-era360tfbackend.onrender.com/api/register-cuidador';
 
   constructor(
     private fb: FormBuilder,
