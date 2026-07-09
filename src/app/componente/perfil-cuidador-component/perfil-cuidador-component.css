@@ -9,21 +9,26 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
 }
 
-.header-section h1 {
+.header-text h1 {
   color: #007f99;
-  font-size: 50px;
+  font-size: 42px;
+  font-weight: 700;
   margin: 0;
+  line-height: 1.1;
 }
 
-.header-section p {
+.header-text p {
   color: #4b5f6f;
   font-size: 18px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
+.header-icon {
+  font-size: 48px;
+}
 .header-section button {
   height: 46px;
   border-radius: 14px;

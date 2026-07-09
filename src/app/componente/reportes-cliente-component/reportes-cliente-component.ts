@@ -44,8 +44,6 @@ Chart.register(
 })
 export class ReportesClienteComponent implements OnInit {
 
-  idCliente = Number(sessionStorage.getItem('idCliente'));
-
   reservasCliente: Reserva[] = [];
   pagosCliente: Pago[] = [];
   resenasCliente: Resena[] = [];
@@ -67,9 +65,7 @@ export class ReportesClienteComponent implements OnInit {
   cargarDatos(): void {
     this.reservasService.list().subscribe({
       next: reservas => {
-        this.reservasCliente = reservas.filter(
-          r => Number(r.idCliente) === this.idCliente
-        );
+        this.reservasCliente = reservas;
 
         this.totalReservas = this.reservasCliente.length;
 
@@ -98,11 +94,14 @@ export class ReportesClienteComponent implements OnInit {
                   this.graficoPagosPorEstado();
                   this.graficoResenasPorCalificacion();
                 }, 100);
-              }
+              },
+              error: err => console.error('ERROR RESEÑAS:', err)
             });
-          }
+          },
+          error: err => console.error('ERROR PAGOS:', err)
         });
-      }
+      },
+      error: err => console.error('ERROR RESERVAS:', err)
     });
   }
 

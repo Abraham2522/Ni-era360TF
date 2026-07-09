@@ -23,6 +23,7 @@ import { PerfilCuidadorComponent } from './componente/perfil-cuidador-component/
 import { ReportesClienteComponent } from './componente/reportes-cliente-component/reportes-cliente-component';
 import { ReportesCuidadorComponent } from './componente/reportes-cuidador-component/reportes-cuidador-component';
 import {authGuard} from './guards/auth-guard';
+import {ChatsCuidadorComponent} from './componente/chats-cuidador-component/chats-cuidador-component';
 
 export const routes: Routes = [
   { path: '', component: Index },
@@ -68,6 +69,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./componente/chats-cliente-component/chats-cliente-component')
         .then(m => m.ChatsClienteComponent)
+  },
+  {
+    path: 'chats-cuidador-component',
+    component: ChatsCuidadorComponent,
+    canActivate: [authGuard]
   },
 
   { path: '**', redirectTo: '' }

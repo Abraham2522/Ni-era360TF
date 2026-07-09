@@ -14,14 +14,16 @@
 
 .header-section h1 {
   color: #007f99;
-  font-size: 50px;
+  font-size: 42px;
+  font-weight: 700;
   margin: 0;
+  line-height: 1.1;
 }
 
 .header-section p {
   color: #4b5f6f;
   font-size: 18px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .header-section button {

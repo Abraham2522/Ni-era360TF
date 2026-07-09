@@ -197,3 +197,33 @@
     font-size: 28px;
   }
 }
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #e53935;
+  color: white;
+
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.btn-logout:hover {
+  background: #c62828;
+}
+
+.btn-logout mat-icon {
+  font-size: 20px;
+}

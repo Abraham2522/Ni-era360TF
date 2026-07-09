@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { ReservasService } from '../../services/reservas-service';
 import { PagosService } from '../../services/pagos-service';
 import { ResenasService } from '../../services/resenas-service';
 import { MensajesService } from '../../services/mensajes-service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home-cuidador-component',
   standalone: true,
-  imports: [RouterLink],
+  imports: [
+    RouterLink,
+    MatIconModule,
+    MatButtonModule
+  ],
   templateUrl: './home-cuidador-component.html',
   styleUrl: './home-cuidador-component.css',
 })
@@ -24,7 +30,8 @@ export class HomeCuidadorComponent implements OnInit {
     private reservasService: ReservasService,
     private pagosService: PagosService,
     private resenasService: ResenasService,
-    private mensajesService: MensajesService
+    private mensajesService: MensajesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,11 +41,15 @@ export class HomeCuidadorComponent implements OnInit {
     this.cargarMensajes();
   }
 
+  logout(): void {
+    localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
   cargarReservas(): void {
     this.reservasService.list().subscribe({
-      next: data => {
-        this.totalReservas = data.length;
-      },
+      next: data => this.totalReservas = data.length,
       error: err => console.error('ERROR RESERVAS:', err)
     });
   }
@@ -76,9 +87,7 @@ export class HomeCuidadorComponent implements OnInit {
 
   cargarMensajes(): void {
     this.mensajesService.list().subscribe({
-      next: data => {
-        this.totalMensajes = data.length;
-      },
+      next: data => this.totalMensajes = data.length,
       error: err => console.error('ERROR MENSAJES:', err)
     });
   }

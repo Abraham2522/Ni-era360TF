@@ -7,9 +7,16 @@
       <p>Gestiona tus servicios, reservas, pagos y comunicación con las familias.</p>
     </div>
 
-    <button class="btn-profile" routerLink="/perfil-cuidador-component">
-      Mi Perfil
-    </button>
+    <div class="header-buttons">
+      <button class="btn-profile" routerLink="/perfil-cuidador-component">
+        Mi Perfil
+      </button>
+
+      <button class="btn-logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Cerrar sesión
+      </button>
+    </div>
 
   </div>
 
@@ -49,6 +56,12 @@
       <div class="card-icon">👤</div>
       <h3>Mi perfil</h3>
       <p>Actualiza tu experiencia, datos y especialidades.</p>
+    </div>
+
+    <div class="card" routerLink="/chats-cuidador-component">
+      <div class="card-icon">🗨️</div>
+      <h3>Chats</h3>
+      <p>Revisa las conversaciones activas con las familias.</p>
     </div>
 
   </div>

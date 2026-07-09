@@ -66,17 +66,19 @@ export class MensajesComponent implements OnInit {
   }
 
   registrarMensaje(): void {
+    const idChatInput = prompt('Ingrese el ID del chat:');
+    const idUsuarioInput = prompt('Ingrese el ID del usuario:');
     const contenido = prompt('Ingrese el contenido del mensaje:');
 
-    if (!contenido || contenido.trim() === '') {
-      alert('Debe ingresar un mensaje');
+    if (!idChatInput || !idUsuarioInput || !contenido || contenido.trim() === '') {
+      alert('Debe ingresar chat, usuario y contenido');
       return;
     }
 
     const mensaje: Mensaje = {
       idMensaje: 0,
-      idChat: 1,
-      idUsuario: 1,
+      idChat: Number(idChatInput),
+      idUsuario: Number(idUsuarioInput),
       contenido: contenido,
       fecha: new Date(),
       leido: false
